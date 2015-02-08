@@ -19,7 +19,7 @@ public class Fibonacci {
         }
     }
 
-    private void fibExp2 (int n) {
+    private void polinom(int n) {
         n = n + 1;
         double[] fib = new double[n];
         fib[0] = 0;
@@ -31,14 +31,37 @@ public class Fibonacci {
         }
     }
 
+//    private void matrix(int n) {
+//        long[][] fib = new long[2][2];
+//        long[][] base = new long[2][2];
+//        base[0][0] = 0;
+//        base[0][1] = 1;
+//        base[1][0] = 1;
+//        base[1][1] = 1;
+//        fib[0][0] = 0;
+//        fib[0][1] = 1;
+//        fib[1][0] = 1;
+//        fib[1][1] = 1;
+//        for (int t = 1; t <=n; t++) {
+//            for (int i = 0; i < 2; i++) {
+//                for (int j = 0; j < 2; j++) {
+//                    for (int k = 0; k < 2; k++) {
+//                        fib[i][j] = fib[i][k] * base[k][j];
+//                    }
+//                }
+//            }
+//        }
+//        System.out.println("\tfor N=" + n + "  F=");
+//
+//    }
+
     public void fibonacciNumber () {
         System.out.print("\tЭкспоненциальный алгоритм:\n" +
                 "\tочень медленный\n");
         for (int i = 0; i <= N; i++)
             System.out.print("\t" + fibExp(i));
-        System.out.print("\nгорадздо быстрее запоминать в массив:\n(полиномиальный алгоритм)\n");
-        fibExp2(N);
-        System.out.print("\n\n");
-
+        System.out.print("\n\tгорадздо быстрее запоминать в массив:\n(полиномиальный алгоритм)\n");
+        polinom(N);
+//        System.out.print("\tеще быстрее - f(n) - как n-степень матрицы (0 1, 1 1)\n");
     }
 }
